@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAMbo Bologna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="icon" href="img/favicon.svg">
+
+</head>
+
+
+<body>
+  <!-- HEADER -->
+<header class="site-header">
+    <div class="container-header">
+      <!-- RIGA SUPERIORE -->
+      <div class="row g-0 header-top">
+        <!-- Logo -->
+        <div class="col-1 logo-col">
+          <a href="index.html"><img src="img/logo-giallo.webp" alt="Logo MAMbo" class="logo"></a>
+        </div>
+
+
+        <!-- Titolo MAMbo -->
+        <div class="col-1 offset-2 title-col">
+          <div class="header">MAMbo</div>
+        </div>
+
+
+        <!-- Collabora con noi -->
+        <div class="col-3 offset-3 collabora-col" onclick="openCollaboraModal()">
+        
+          <p class="collabora-text">Collabora con noi</p>
+        </div>
+
+
+        <!-- Tickets -->
+        <div class="col-2 tickets-col">
+          <button class="tickets-btn" onclick="openTicketsModal()">TICKETS</button>
+        </div>
+      </div>
+
+
+      <!-- RIGA MENU -->
+      <div class="row g-0 header-menu">
+        <div class="col-1 offset-3 menu-item">
+          <a href="#" data-dropdown="museo">MUSEO</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="info">INFO</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="servizi">SERVIZI</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="esplora">ESPLORA</a>
+        </div>
+      </div>
+
+ 
+
+      <!-- DROPDOWN BAR -->
+      <div class="dropdown-bar" id="dropdownBar">
+        <div class="dropdown-content" id="museo">
+          <div class="dropdown-column">
+            <h4>Storia</h4>
+            <a href="storia.html#storia">Storia</a>
+            <a href="archivio.html#archivio">Archivio</a>
+            <a href="archivio.html#biblioteca">Biblioteca</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Sedi</h4>
+            <a href="sedi-museo.html#villa-delle-rose">Villa delle Rose</a>
+            <a href="sedi-museo.html#residenza-per-artisti">Residenza per Artisti</a>
+            <a href="sedi-museo.html#sede-principale">Sede principale</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Shop</h4>
+            <a href="book-shop.html#book-shop">Bookshop</a>
+          </div>
+        </div>
+
+
+        <div class="dropdown-content" id="info">
+          <div class="dropdown-column">
+            <h4>Visita</h4>
+            <a href="ingresso-orari.html#ingresso-orari">Ingresso e orari</a>
+            <a href="ingresso-orari.html#date">Calendario</a>
+            <a href="ingresso-orari.html#accessibilita">Accessibilità</a>
+            <a href="come-raggiungerci.html#come-raggiungerci">Come raggiungerci</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Contatti</h4>
+            <a href="contatti.html#orari-segreteria">Orari segreteria</a>
+            <a href="contatti.html#prenotazioni-gruppi">Prenotazioni Gruppi</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Altro</h4>
+            <a href="recensioni.html#recensioni">Recensioni</a>
+          </div>
+        </div>
+
+
+        <div class="dropdown-content" id="servizi">
+          <div class="dropdown-column">
+            <h4>Scuole/Gruppi</h4>
+            <a href="visite-guidate.html">Visite guidate</a>
+            <a href="visite-laboratori.html">Visite con laboratori</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Dipartimento educativo</h4>
+            <a href="origini-metodologia.html">Origini e metodologia</a>
+
+          </div>
+          <div class="dropdown-column">
+            <h4>Affitto sale</h4>
+          <a href="corrispettivi_spazi.pdf" target="_blank">Corrispettivi spazi</a>
+           <a href="regoleoperativesett2023 (1).pdf" target="_blank">Regole operative</a>
+           <a href="modulo_affitto1.pdf" target="_blank">Modulo affitto </a>
+          </div>
+        </div>
+
+        <div class="dropdown-content" id="esplora">
+          <div class="dropdown-column">
+            <h4>Collezioni</h4>
+            <a href="mostre-temporanee.html#mostre-temporanee"> Mostre temporanee</a>
+            <a href="collezioni-permanenti.html#collezioni-permanenti">Collezioni permanenti</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Altro</h4>
+            <a href="eventi.html#eventi">Eventi</a>
+            <a href="ingresso-orari.html#date">Calendario</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </header>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+      
+        <div class="menu">
+            <div onclick="toggleSubmenu(this)">
+                MAMbo
+            </div>
+        </div>
+        
+        <div class="menu">
+                    <div class="menu-header" onclick="toggleSubmenu(this)">
+                Museo
+            </div>
+            <div class="submenu">
+                <a href="storia.html">Storia</a>
+                <a href="archivio.html">Archivio</a>
+                <a href="archivio.html#biblioteca">Biblioteca</a>
+                <a href="sedi-museo.html">Sedi</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Info
+            </div>
+            <div class="submenu">
+                <a href="ingresso-orari.html">Ingresso e orari</a>
+                <a href="ingresso-orari.html#calendario">Calendario</a>
+                <a href="ingresso-orari.html#accessibilità">Accessibilità</a>
+                <a href="come-raggiungerci.html">Come raggiungerci</a>
+                  <a href="contatti.html#orari-segreteria">Orari e segreteria</a>
+                <a href="contatti.html#prenotazioni-gruppi">Prenotazioni gruppi</a>
+                <a href="recensioni.html">Recensioni</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Servizi
+            </div>
+            <div class="submenu">
+                <a href="visite-guidate.html">Visite guidate</a>
+                <a href="visite-laboratori.html">Visite con laboratori</a>
+                <a href="origini-metodologia.html">Origini e metodologia</a>
+                <a href="corrispettivi_spazi.pdf">Corrispettivi_spazi</a>
+                <a href="regoleoperativesett2023 (1).pdf">Regole operative</a>
+                <a href="modulo_affitto1.pdf">Modulo affitto</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Esplora
+            </div>
+            <div class="submenu">
+                <a href="mostre-temporanee.html">Mostre temporanee</a>
+                <a href="collezioni-permanenti.html">Collezioni permanenti</a>
+                <a href="eventi.html">Eventi</a>
+                <a href="ingresso-orari.html#calendario">Calendario</a>
+            </div>
+        </div>
+
+    </div>
+
+  <!-- CONTENUTO PAGINA -->
+<!-- MOSTRE E EVENTI -->
+   <section class="mostre-eventi" id="archivio">
+     <div class="container">
+       <div class="row">
+         <div class="col-12 pt-5 pb-5">
+           <h3>ARCHIVIO</h3>
+         </div>
+       </div>
+       <div class="row">
+         <!-- Card 1 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/collage.webp" alt="Collage di Mimmo Rotella">
+             <div class="overlay">
+               <h4>Collage di Mimmo Rotella</h4>
+               <p>Rotella Domenico detto Mimmo Rotella<br>
+               1918/2006, collage.<br>
+               <a class="see-more" onclick="openModal('modal-rotella')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 2 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/funeraletogliatti.webp" alt="Collezioni permanenti">
+             <div class="overlay">
+               <h4>I funerali di Togliatti</h4>
+               <p>Renato Guttuso<br>
+                1972, colori acrilici e collage su tela.</p>
+               <a class="see-more" onclick="openModal('modal-collezioni')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 3 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/ilteoremadipitagora.webp" alt="Teorema di Pitagora">
+             <div class="overlay">
+               <h4>Il Teorema di Pitagora</h4>
+               <p>Pinot Gallizio<br>
+            1960/61, tempere su tela.</p>
+               <a class="see-more" onclick="openModal('modal-eventi')">See More</a>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+       <div class="row">
+         <!-- Card 4 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/persempreconte.webp" alt="Per sempre con te fino alla morte">
+             <div class="overlay">
+               <h4>Per sempre con te fino alla morte</h4>
+               <p>Moira Ricci<br>
+               2012, pastello su carta.</p>
+               <a class="see-more" onclick="openModal('modal-opera4')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 5 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/raccoltafotografica.webp" alt="FOTO/INDUSTRIA">
+             <div class="overlay">
+               <h4>FOTO/INDUSTRIA</h4>
+               <p>Moira Ricci<br>
+               2025, raccolta fotografica.</p>
+               <a class="see-more" onclick="openModal('modal-opera5')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 6 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/progettofotografico2.webp" alt="Quarta Casa">
+             <div class="overlay">
+               <h4>Quarta Casa</h4>
+               <p>Moira Ricci<br>
+               2025, video-installazione.</p>
+               <a class="see-more" onclick="openModal('modal-opera6')">See More</a>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <div class="row">
+         <div class="col-12 pt-5 pb-5">
+           <h3 id="biblioteca"> BIBLIOTECA</h3>
+         </div>
+       </div>
+ 
+         <!-- Card 7 -->
+          <div class="row">
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/museomorandi.webp" alt="Museo Morandi">
+             <div class="overlay">
+               <h4>Museo Morandi</h4>
+               <p>Raccolta bibliografica</p>
+               <a class="see-more" onclick="openModal('modal-opera7')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 8 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/fondopozzati.webp" alt="Fondo Concetto Pozzati">
+             <div class="overlay">
+               <h4>Fondo Concetto Pozzati</h4>
+               <p>Raccolta bibliografica</p>
+               <a class="see-more" onclick="openModal('modal-opera8')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 9 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/biblioteca8.webp" alt="Bookshop">
+             <div class="overlay">
+               <h4>Bookshop</h4>
+               <p>Bibliografia in vendita</p>
+               <a class="see-more" onclick="openModal('modal-opera9')">See More</a>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+       <div class="row">
+         <!-- Card 10 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/biblioteca5.webp" alt="Archivio">
+             <div class="overlay">
+               <h4>Postazione Rilevamento d'archivio</h4>
+               <p>Raccolta videografica e bibliografica.</p>
+               <a class="see-more" onclick="openModal('modal-opera10')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 11 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/biblioteca3.webp" alt="Opera 11">
+             <div class="overlay">
+               <h4>Raccolta Biblioteca privata</h4>
+               <p>Bibliografia consultabile su prenotazione.</p>
+               <a class="see-more" onclick="openModal('modal-opera11')">See More</a>
+             </div>
+           </div>
+         </div>
+       
+         <!-- Card 12 -->
+         <div class="col-12 col-md-4">
+           <div class="card-img">
+             <img src="img/laboratorio.webp" alt="Laboratorio">
+             <div class="overlay">
+               <h4>Laboratorio</h4>
+               <p>Area di ricerca</p>
+               <a class="see-more" onclick="openModal('modal-opera12')">See More</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   
+
+
+   <!-- Modal Rotella -->
+   <div id="modal-rotella" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-rotella')">&times;</span>
+       <h2>Collage di Mimmo Rotella</h2>
+       <p>Mimmo Rotella (Catanzaro, 1918 - Milano, 2006) è stato uno dei protagonisti assoluti dell'arte italiana del secondo dopoguerra. Pioniere del décollage, tecnica che consiste nello strappare manifesti pubblicitari dai muri della città per ricomporli in opere d'arte, Rotella ha saputo trasformare il linguaggio della comunicazione di massa in poesia visiva.</p>
+       <p>Quest'opera del 1961 rappresenta un momento cruciale della sua ricerca artistica, quando l'artista aveva ormai perfezionato la sua tecnica e sviluppato un linguaggio personale riconoscibile. I frammenti di manifesti strappati creano una stratificazione di immagini e parole che raccontano la vita urbana dell'epoca, trasformando il quotidiano in arte.</p>
+       <p>La tecnica del décollage si contrappone al collage cubista: mentre Picasso e Braque incollavano elementi sulla tela, Rotella strappava e sottraeva, rivelando gli strati nascosti della città contemporanea. Un gesto che anticipava la cultura del sampling e del remix che caratterizzerà l'arte delle generazioni successive.</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Collezioni -->
+   <div id="modal-collezioni" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-collezioni')">&times;</span>
+       <h2>I funerati di Togliatti</h2>
+       <p>Il fondatore del PCI, l'ideatore della "via italiana al socialismo" si è spento di venerdì nel campo di Artek a Jalta, durante una breve vacanza con la sua compagna Nilde Iotti. È il 21 agosto del 1964, quando nel mondo si diffonde la notizia della scomparsa di Togliatti, causata da un ictus improvviso.
+Il giorno dopo a Roma, un fiume umano, intellettuali, politici, cittadini qualunque, si riversa a Roma, nella camera ardente allestita a Botteghe Oscure e il 25, alle esequie, si conta un milione di persone. È la prima volta nella storia italiana: un funerale, per di più laico, di un dirigente di partito, diventa un evento popolare, un momento sociale, un avvenimento senza precedenti.
+Nel 1972, otto anni dopo,  Renato Guttuso completa il dipinto che diventerà la sua opera manifesto: "I Funerali di Togliatti".
+Capolavoro maestoso, acrilici e collage di carte stampate su carte incollata su quattro pannelli di compensato 340x440, che ritraggono in maniera anacronistica quel solenne momento, in un collage di volti passati e attuali, sullo sfondo di un pesante grigiore interrotto dal rosso caldo delle bandiere. </p>
+     </div>
+   </div>
+
+
+   <!-- Modal Eventi -->
+   <div id="modal-eventi" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-eventi')">&times;</span>
+       <h2>Il Teorema di Pitagora</h2>
+       <p>L'opera "Il Teorema di Pitagora" di Pinot Gallizio, presentata da Giorgina Bertolino, è un'imponente tela lunga quasi dieci metri che fa parte del ciclo Ipotenusa, una serie di nove quadri realizzati tra il 1960 e il 1961. In questo lavoro, la geometria euclidea si trasforma in un dinamico ingranaggio di solidi che cresce, si arrampica e dilaga come uno sciame nello spazio orizzontale, alternando forme piene a figure trasparenti delineate solo dal contorno.
+L'approccio di Gallizio è quello di una "geometria emotiva", una forma di esplorazione che traduce in pittura la psicogeografia situazionista, analizzando gli effetti dell'ambiente sul comportamento degli individui. Come fondatore dell'Internazionale Situazionista e inventore della pittura industriale, Gallizio inserisce nell'opera la sua critica al potere: attraverso il concetto di "dissimmetria", egli mina le basi del mondo simmetrico e convenzionale, elevando l'irregolarità a principio della biologia moderna e dell'arte.
+Oltre alla componente scientifica e politica, l'opera nasconde una dimensione narrativa e poetica. Come sintetizzato dalla critica Carla Lonzi, il dipinto mette in scena una vera e propria saga: un Pitagora innamorato della "donna Ipotenusa", dove i cateti figurano come pretendenti respinti. Il ciclo si pone dunque come un cerimoniale amoroso legato alla magia e alla poesia, contrapponendosi ai meccanismi rigidi della società. Oggi il quadro appartiene alle collezioni permanenti del MAMbo, a seguito della donazione di Giorgio Gallizio del 1979.</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 4 -->
+   <div id="modal-opera4" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera4')">&times;</span>
+       <h2>Con te fino alla morte</h2>
+       <p>Il titolo della mostra, che significa "per sempre con te finché morte non ci separi", deriva da una lettera che il padre di Ricci scrisse alla sua fidanzata nel 1970.
+Per sempre con te fino alla morte ruota attorno a un disegno dall'inquietante iconologia del pericolo, della perdita, dell'assenza: il teschio e le ossa incrociate. Oggi, questa immagine sulla lettera scritta dal padre di Ricci diventa il segno indelebile dell'amore perduto. L'artista ha iniziato a osservare il comportamento di un uomo rimasto solo (un vedovo) alla costante ricerca di un nuovo amore che spesso assomiglia a quello che aveva avuto. Pertanto, non solo l'artista ha registrato ciò che suo padre fa a casa (suonare e cantare costantemente canzoni d'amore) ma, con lui, ha iniziato a frequentare le sale da ballo pubbliche, dove ha scoperto che il comportamento di uomini e donne single è affine a quello degli adolescenti, confermando che le varie fasi dell'innamoramento, della conquista e dell'abbandono sono le stesse a qualsiasi età e indipendentemente dal background.
+Con questa mostra, Ricci indaga il “prima” e il “dopo” di una storia attraverso riproduzioni fotografiche, dettagli di lettere d’amore e video. In “Per sempre con te fino alla morte” troviamo il corteggiamento, l’impegno, la perdita e la continua ricerca dell’amore tra le sale da ballo piene di nostalgia.</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 5 -->
+   <div id="modal-opera5" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera5')">&times;</span>
+       <h2>FOTO/INDUSTRIA</h2>
+       <p>Questa volta, ci immergiamo negli archivi di famiglia di Moira Ricci, un'artista visiva toscana il cui lavoro – spesso di natura autobiografica,
+        che fonde invenzioni tecnologiche e immaginario popolare – esplora l'identità individuale e sociale, la storia familiare e l'appartenenza nazionale. Nella sua serie 20.12.53–10.08.04 – le date di nascita e morte della madre – (2004–2014),
+        il concetto di photobombing assume sfumature catartiche.
+        Dopo aver selezionato un numero significativo di vecchie foto di famiglia che ritraggono la madre, Ricci si inserisce digitalmente in queste immagini, ma in modo così sottile e plausibile che sembra quasi che fosse presente al momento dello scatto.
+        In questo modo, tenta di incontrare virtualmente la madre in diversi momenti della sua vita, prima della sua improvvisa scomparsa. Sebbene Ricci cerchi di abitare queste immagini in modo plausibile, vestendosi secondo la moda delle epoche raffigurate,
+        preferisce apparire con discrezione, osservando la madre come una figura esterna, quasi da dietro le quinte.
+</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 6 -->
+   <div id="modal-opera6" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera6')">&times;</span>
+       <h2>Quarta Casa</h2>
+       <p>Nell'ambito della VII edizione della Biennale di Fotografia dell’Industria e del Lavoro - FOTO/INDUSTRIA, presentata da Fondazione MAST, curata da Francesco Zanot e avente come concept HOME - la casa, intesa come spazio fisico, culturale e simbolico, dal 7 novembre 2025 all'11 gennaio 2026 il MAMbo- Museo d'Arte Moderna di Bologna del Settore Musei Civici del Comune di Bologna ospita una delle 11 mostre che caratterizzano la manifestazione:
+        la prima retrospettiva dedicata a Moira Ricci (Italia, 1977), Quarta Casa, che presenta un’ampia selezione di lavori realizzati nell’arco di circa venticinque anni.
+La mostra, co-curata da Lorenzo Balbi, mette in luce la coerenza e la profondità della ricerca dell'artista attraverso il filtro di un tema ricorrente e fondamentale:
+la casa, che costituisce la cornice entro cui si attivano una serie di relazioni, un grande contenitore di memorie e il fulcro di un territorio, la Maremma,
+dove si intrecciano sfera privata e vita collettiva. Pioniera in Italia nell’impiego di materiali d’archivio e nella ricontestualizzazione della fotografia familiare,
+Ricci ha condotto un lavoro sistematico di analisi e revisione delle funzioni sociali di questo mezzo. La sua opera si configura come una riflessione critica su vasti argomenti come l’identità, la cultura popolare,
+la memoria individuale e collettiva e le strategie per la loro conservazione e rappresentazione.
+</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 7 -->
+   <div id="modal-opera7" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera7')">&times;</span>
+       <h2>Museo Morandi</h2>
+       <p>In parallelo con le collezioni permanenti e con l'attività espositiva del museo, la biblioteca fornisce all'utente materiale bibliografico di approfondimento riguardante gli artisti e i temi trattati,
+        in uno spazio confortevole che si offre come luogo di studio, dedicato anche alla presentazione di libri, incontri con autori, artisti e critici.
+In continuo accrescimento, il patrimonio della biblioteca consta di 72 riviste di settore e oltre 40.000 volumi,
+principalmente monografie e cataloghi d'arte moderna e contemporanea - nazionali e internazionali - acquisiti in gran parte attraverso una campagna di ricerca,
+appositamente curata, nonché un costante e proficuo rapporto di scambio con importanti istituzioni museali italiane e straniere.</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 8 -->
+   <div id="modal-opera8" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera8')">&times;</span>
+       <h2>Titolo Opera 8</h2>
+       <p>Dal 1° dicembre 2018 la Biblioteca ha una nuova sala dedicata interamente alla raccolta di oltre 5.000 volumi tra cataloghi d'arte e saggi,
+        scelti e collezionati da Concetto Pozzati nell'arco della sua vita, donati al MAMbo dai figli Maura e Jacopo.
+</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 9 -->
+   <div id="modal-opera9" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera9')">&times;</span>
+       <h2>Bookshop</h2>
+       <p>Il concept è caratterizzato da linee pulite, scelta di materiali a tinte chiare e luminose,
+        distribuzione razionale per consentire al visitatore una confortevole fruizione degli spazi.
+Il bookshop opera in sinergia con le collezioni del MAMbo e del Museo Morandi e con l'attività espositiva,
+le attività educative, gli eventi, gli incontri, i progetti speciali, offrendo produzioni editoriali sempre aggiornate,
+comprese le Edizioni MAMbo, insieme ad un'ampia e variegata selezione di pubblicazioni sui temi dell’arte, del design, dell'architettura, dell'illustrazione,
+scelte tra le migliori proposte italiane e internazionali e costantemente aggiornate con le novità editoriali.
+Non mancheranno oggetti di merchandising e design.</p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 10 -->
+   <div id="modal-opera10" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera10')">&times;</span>
+       <h2>Postazione Rilevamento d'archivio</h2>
+       <p>Dal 16 marzo 2022 la Biblioteca offre al pubblico la possibilità di approfondire con contenuti video il percorso presentato in collezione permanente attraverso la sezione Rilevamenti d'archivio.
+        Le Settimane Internazionali della Performance e gli anni '60 e '70 a Bologna e in Emilia Romagna. </p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 11 -->
+   <div id="modal-opera11" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera11')">&times;</span>
+       <h2>Raccolta Biblioteca privata</h2>
+       <p>Il MAMbo, inaugurato nel 2007, è il Museo d’Arte Moderna di Bologna.
+Con i suoi ampi spazi dedicati alla cultura visiva e alla sperimentazione, colleziona, conserva, studia, comunica ed espone il proprio patrimonio artistico.
+Il museo fa propri i valori della democrazia e dell'inclusività e si pone come motore del dialogo critico sulle sfide del tempo presente e del futuro.
+La Collezione permanente del museo propone un’interpretazione dell’arte italiana attraverso la storia della Galleria d’Arte Moderna di Bologna e le successive acquisizioni,
+dagli anni Cinquanta fino agli sviluppi più recenti.
+Attraverso un’intensa attività espositiva nella Sala delle Ciminiere, il MAMbo esplora il presente e contribuisce a tracciare nuove vie dell’arte seguendo le più innovative pratiche di sperimentazione.
+Tutte le mostre temporanee allestite, ampie monografiche e collettive di artisti italiani e internazionali, si sviluppano in una prospettiva aperta alla ricerca e alla dialettica tra le opere e il contesto espositivo. </p>
+     </div>
+   </div>
+
+
+   <!-- Modal Opera 12 -->
+   <div id="modal-opera12" class="modal">
+     <div class="modal-content">
+       <span class="close" onclick="closeModal('modal-opera12')">&times;</span>
+       <h2>Laboratorio</h2>
+       <p>MAMbo - Museo d'Arte Moderna di Bologna mette a disposizione i suoi spazi a soggetti che vogliono organizzare
+        eventi privati offrendo ai propri ospiti un contesto artistico-culturale di grande interesse e un’esperienza dal valore aggiunto grazie all’incontro con l’arte contemporanea.
+Aziende, istituzioni e Privati possono promuovere la propria immagine organizzando al MAMbo:
+convention, congressi, conferenze, riunioni aziendali, presentazione di prodotti, corsi di aggiornamento, rinfreschi, cene.
+MAMbo coordinerà l’organizzazione dell’evento per meglio predisporre e personalizzare ogni aspetto.</p>
+     </div>
+   </div>
+
+
+
+ <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="logo-container">
+        <img src="img/logo-giallo.webp" alt="MAMbo Logo" class="logo-mambo">
+      </div>
+     
+      <div class="contatti-section">
+        <h4>CONTATTI</h4>
+       <p>COMUNE DI BOLOGNA</p><br>
+        <p>SETTORE MUSEI CIVICI BOLOGNA</p><br>
+        <p>Via Don Minzoni, 14 - 40121 BOLOGNA</p><br>
+        <p>+390516496611</p><br>
+        <p><a href="mailto:infoMAMbo@comune.bologna.it" class="email-link">infoMAMbo@comune.bologna.it</a></p>
+      </div>
+          <div class="col-1 "></div>
+      <div class="links-section">
+        <div class="links-list">
+          <p><a href="storia.html">Chi siamo?</a></p><br>
+          <p><a href="recensioni.html">Recensioni</a></p>
+        </div>
+      </div>
+     
+      <div class="col-2 "></div>
+      <div class="social-section">
+        <div class="social-item">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="social-link">
+          <span><a href="https://www.instagram.com/mambobologna/" target="_blank">Instagram</a></span></div>
+        </div>
+       
+        <div class="social-item">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="social-link">
+          <span><a href="https://www.youtube.com/@mambochannel3039" target="_blank">YouTube</a></span></div>
+        </div>
+       
+        <div class="social-item pb-5">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+        <div class="social-link">
+          <span><a href="https://www.facebook.com/MAMboMuseoArteModernaBologna/" target="_blank">Facebook</a></span></div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="copyright">
+      <p>© - 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+
+  <!-- MODAL TICKETS -->
+  <div id="ticketsModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeTicketsModal()">&times;</button>
+      <h2>Prenota Biglietti</h2>
+      <form onsubmit="submitTickets(event)">
+        <div class="form-group">
+          <label for="ticket-name">Nome e Cognome</label>
+          <input type="text" id="ticket-name" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-email">Email</label>
+          <input type="email" id="ticket-email" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-phone">Telefono</label>
+          <input type="tel" id="ticket-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-date">Data Visita</label>
+          <input type="date" id="ticket-date" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-quantity">Numero Biglietti</label>
+          <input type="number" id="ticket-quantity" min="1" max="10" value="1" required>
+        </div>
+        <button type="submit" class="form-submit">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- MODAL COLLABORA -->
+  <div id="collaboraModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCollaboraModal()">&times;</button>
+      <h2>Collabora con Noi</h2>
+      <form onsubmit="submitCollabora(event)">
+        <div class="form-group">
+          <label for="collab-name">Nome e Cognome</label>
+          <input type="text" id="collab-name" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-email">Email</label>
+          <input type="email" id="collab-email" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-phone">Telefono</label>
+          <input type="tel" id="collab-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-area">Area di Interesse</label>
+          <input type="text" id="collab-area" placeholder="es. Arte, Educazione, Comunicazione" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-message">Messaggio</label>
+          <textarea id="collab-message" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/javascript.js"></script>
+  <script src="js/header.js"></script>
+</body>
+</html>

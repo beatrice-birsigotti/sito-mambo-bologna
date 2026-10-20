@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAMbo Bologna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="icon" href="img/favicon.svg">
+
+</head>
+
+
+<body>
+  <!-- HEADER -->
+<header class="site-header">
+    <div class="container-header">
+      <!-- RIGA SUPERIORE -->
+      <div class="row g-0 header-top">
+        <!-- Logo -->
+        <div class="col-1 logo-col">
+          <a href="index.html"><img src="img/logo-giallo.webp" alt="Logo MAMbo" class="logo"></a>
+        </div>
+
+
+        <!-- Titolo MAMbo -->
+        <div class="col-1 offset-2 title-col">
+          <div class="header">MAMbo</div>
+        </div>
+
+
+        <!-- Collabora con noi -->
+        <div class="col-3 offset-3 collabora-col" onclick="openCollaboraModal()">
+        
+          <p class="collabora-text">Collabora con noi</p>
+        </div>
+
+
+        <!-- Tickets -->
+        <div class="col-2 tickets-col">
+          <button class="tickets-btn" onclick="openTicketsModal()">TICKETS</button>
+        </div>
+      </div>
+
+
+      <!-- RIGA MENU -->
+      <div class="row g-0 header-menu">
+        <div class="col-1 offset-3 menu-item">
+          <a href="#" data-dropdown="museo">MUSEO</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="info">INFO</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="servizi">SERVIZI</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="esplora">ESPLORA</a>
+        </div>
+      </div>
+
+ 
+
+      <!-- DROPDOWN BAR -->
+      <div class="dropdown-bar" id="dropdownBar">
+        <div class="dropdown-content" id="museo">
+          <div class="dropdown-column">
+            <h4>Storia</h4>
+            <a href="storia.html#storia">Storia</a>
+            <a href="archivio.html#archivio">Archivio</a>
+            <a href="archivio.html#biblioteca">Biblioteca</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Sedi</h4>
+            <a href="sedi-museo.html#villa-delle-rose">Villa delle Rose</a>
+            <a href="sedi-museo.html#residenza-per-artisti">Residenza per Artisti</a>
+            <a href="sedi-museo.html#sede-principale">Sede principale</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Shop</h4>
+            <a href="book-shop.html#book-shop">Bookshop</a>
+          </div>
+        </div>
+
+
+        <div class="dropdown-content" id="info">
+          <div class="dropdown-column">
+            <h4>Visita</h4>
+            <a href="ingresso-orari.html#ingresso-orari">Ingresso e orari</a>
+            <a href="ingresso-orari.html#date">Calendario</a>
+            <a href="ingresso-orari.html#accessibilita">Accessibilità</a>
+            <a href="come-raggiungerci.html#come-raggiungerci">Come raggiungerci</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Contatti</h4>
+            <a href="contatti.html#orari-segreteria">Orari segreteria</a>
+            <a href="contatti.html#prenotazioni-gruppi">Prenotazioni Gruppi</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Altro</h4>
+            <a href="recensioni.html#recensioni">Recensioni</a>
+          </div>
+        </div>
+
+
+        <div class="dropdown-content" id="servizi">
+          <div class="dropdown-column">
+            <h4>Scuole/Gruppi</h4>
+            <a href="visite-guidate.html">Visite guidate</a>
+            <a href="visite-laboratori.html">Visite con laboratori</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Dipartimento educativo</h4>
+            <a href="origini-metodologia.html">Origini e metodologia</a>
+
+          </div>
+          <div class="dropdown-column">
+            <h4>Affitto sale</h4>
+          <a href="corrispettivi_spazi.pdf" target="_blank">Corrispettivi spazi</a>
+           <a href="regoleoperativesett2023 (1).pdf" target="_blank">Regole operative</a>
+           <a href="modulo_affitto1.pdf" target="_blank">Modulo affitto </a>
+          </div>
+        </div>
+
+        <div class="dropdown-content" id="esplora">
+          <div class="dropdown-column">
+            <h4>Collezioni</h4>
+            <a href="mostre-temporanee.html#mostre-temporanee"> Mostre temporanee</a>
+            <a href="collezioni-permanenti.html#collezioni-permanenti">Collezioni permanenti</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Altro</h4>
+            <a href="eventi.html#eventi">Eventi</a>
+            <a href="ingresso-orari.html#date">Calendario</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </header>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+      
+        <div class="menu">
+            <div onclick="toggleSubmenu(this)">
+                MAMbo
+            </div>
+        </div>
+        
+        <div class="menu">
+                    <div class="menu-header" onclick="toggleSubmenu(this)">
+                Museo
+            </div>
+            <div class="submenu">
+                <a href="storia.html">Storia</a>
+                <a href="archivio.html">Archivio</a>
+                <a href="archivio.html#biblioteca">Biblioteca</a>
+                <a href="sedi-museo.html">Sedi</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Info
+            </div>
+            <div class="submenu">
+                <a href="ingresso-orari.html">Ingresso e orari</a>
+                <a href="ingresso-orari.html#calendario">Calendario</a>
+                <a href="ingresso-orari.html#accessibilità">Accessibilità</a>
+                <a href="come-raggiungerci.html">Come raggiungerci</a>
+                  <a href="contatti.html#orari-segreteria">Orari e segreteria</a>
+                <a href="contatti.html#prenotazioni-gruppi">Prenotazioni gruppi</a>
+                <a href="recensioni.html">Recensioni</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Servizi
+            </div>
+            <div class="submenu">
+                <a href="visite-guidate.html">Visite guidate</a>
+                <a href="visite-laboratori.html">Visite con laboratori</a>
+                <a href="origini-metodologia.html">Origini e metodologia</a>
+                <a href="corrispettivi_spazi.pdf">Corrispettivi_spazi</a>
+                <a href="regoleoperativesett2023 (1).pdf">Regole operative</a>
+                <a href="modulo_affitto1.pdf">Modulo affitto</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Esplora
+            </div>
+            <div class="submenu">
+                <a href="mostre-temporanee.html">Mostre temporanee</a>
+                <a href="collezioni-permanenti.html">Collezioni permanenti</a>
+                <a href="eventi.html">Eventi</a>
+                <a href="ingresso-orari.html#calendario">Calendario</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+ <!-- CONTENUTO PAGINA -->
+<!-- CONTENUTO PAGINA -->
+<section class="sedi-section">
+ <div class="container-fluid">
+ 
+   <!-- SEDE 1: VILLA DELLE ROSE -->
+   <div class="row">
+     <div class="col-12">
+       <div class="sede-image-container" id="villa-delle-rose">
+         <img src="img/villadellerose.webp" alt="Villa delle Rose">
+         <div class="sede-overlay">
+           <div class="sede-description">
+             <div class="sedi">VILLA DELLE ROSE</div>
+             <p>Immersa in un parco secolare nel cuore di Bologna, Villa delle Rose è la sede espositiva del MAMbo dedicata all'arte contemporanea. Ospita mostre temporanee di artisti internazionali e rappresenta uno spazio privilegiato per l'incontro tra arte, architettura e natura.</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+   <!-- SEDE 2: RESIDENZA PER ARTISTI -->
+   <div class="row">
+     <div class="col-12">
+       <div class="sede-image-container" id="residenza-per-artisti">
+         <img src="img/residenzaperartisti.webp" alt="Residenza per Artisti">
+         <div class="sede-overlay">
+           <div class="sede-description">
+             <div class="sedi">RESIDENZA PER ARTISTI</div>
+             <p>Uno spazio dedicato alla ricerca e alla sperimentazione artistica. La residenza offre agli artisti selezionati un ambiente stimolante dove sviluppare nuovi progetti, confrontarsi con il territorio e creare un dialogo con la comunità locale e internazionale.</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+   <!-- SEDE 3: SPAZIO CREATIVO -->
+   <div class="row">
+     <div class="col-12">
+       <div class="sede-image-container">
+         <img src="img/residenzaperartisti2.webp" alt="Spazio Residenza">
+         <div class="sede-overlay">
+           <div class="sede-description">
+             <div class="sedi">SPAZIO CREATIVO</div>
+             <p>Gli spazi della residenza sono progettati per favorire la creatività e lo scambio culturale. Artisti provenienti da tutto il mondo trovano qui le condizioni ideali per realizzare le loro opere, con il supporto del team del museo e l'accesso alle sue risorse.</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+   <!-- SEDE 4: SEDE MUSEO -->
+   <div class="row">
+     <div class="col-12">
+       <div class="sede-image-container" id="sede-principale">
+         <img src="img/museoesterno.webp" alt="Sede Principale MAMbo">
+         <div class="sede-overlay">
+           <div class="sede-description">
+             <div class="sedi">SEDE PRINCIPALE</div>
+             <p>Nel cuore della Manifattura delle Arti, l'edificio principale del MAMbo ospita la collezione permanente, le sale espositive, il bookshop, la caffetteria e gli spazi educativi. Un polo culturale che dialoga con il territorio e le sue istituzioni.</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+   <!-- SEDE 5: SEDE INTERNO -->
+   <div class="row">
+     <div class="col-12">
+       <div class="sede-image-container">
+         <img src="img/mamboentrata.webp" alt="Interno MAMbo">
+         <div class="sede-overlay">
+           <div class="sede-description">
+             <div class="sedi">IL MUSEO ALL'INTERNO</div>
+             <p>Nel cuore della Manifattura delle Arti, l'edificio principale del MAMbo ospita la collezione permanente, le sale espositive, il bookshop, la caffetteria e gli spazi educativi. Un polo culturale che dialoga con il territorio e le sue istituzioni.</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+
+
+ </div>
+</section>
+
+
+
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="logo-container">
+        <img src="img/logo-giallo.webp" alt="MAMbo Logo" class="logo-mambo">
+      </div>
+     
+      <div class="contatti-section">
+        <h4>CONTATTI</h4>
+       <p>COMUNE DI BOLOGNA</p><br>
+        <p>SETTORE MUSEI CIVICI BOLOGNA</p><br>
+        <p>Via Don Minzoni, 14 - 40121 BOLOGNA</p><br>
+        <p>+390516496611</p><br>
+        <p><a href="mailto:infoMAMbo@comune.bologna.it" class="email-link">infoMAMbo@comune.bologna.it</a></p>
+      </div>
+          <div class="col-1 "></div>
+      <div class="links-section">
+        <div class="links-list">
+          <p><a href="storia.html">Chi siamo?</a></p><br>
+          <p><a href="recensioni.html">Recensioni</a></p>
+        </div>
+      </div>
+     
+      <div class="col-2 "></div>
+      <div class="social-section">
+        <div class="social-item">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="social-link">
+          <span><a href="https://www.instagram.com/mambobologna/" target="_blank">Instagram</a></span></div>
+        </div>
+       
+        <div class="social-item">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="social-link">
+          <span><a href="https://www.youtube.com/@mambochannel3039" target="_blank">YouTube</a></span></div>
+        </div>
+       
+        <div class="social-item pb-5">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+        <div class="social-link">
+          <span><a href="https://www.facebook.com/MAMboMuseoArteModernaBologna/" target="_blank">Facebook</a></span></div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="copyright">
+      <p>© - 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+
+  <!-- MODAL TICKETS -->
+  <div id="ticketsModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeTicketsModal()">&times;</button>
+      <h2>Prenota Biglietti</h2>
+      <form onsubmit="submitTickets(event)">
+        <div class="form-group">
+          <label for="ticket-name">Nome e Cognome</label>
+          <input type="text" id="ticket-name" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-email">Email</label>
+          <input type="email" id="ticket-email" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-phone">Telefono</label>
+          <input type="tel" id="ticket-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-date">Data Visita</label>
+          <input type="date" id="ticket-date" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-quantity">Numero Biglietti</label>
+          <input type="number" id="ticket-quantity" min="1" max="10" value="1" required>
+        </div>
+        <button type="submit" class="form-submit">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- MODAL COLLABORA -->
+  <div id="collaboraModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCollaboraModal()">&times;</button>
+      <h2>Collabora con Noi</h2>
+      <form onsubmit="submitCollabora(event)">
+        <div class="form-group">
+          <label for="collab-name">Nome e Cognome</label>
+          <input type="text" id="collab-name" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-email">Email</label>
+          <input type="email" id="collab-email" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-phone">Telefono</label>
+          <input type="tel" id="collab-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-area">Area di Interesse</label>
+          <input type="text" id="collab-area" placeholder="es. Arte, Educazione, Comunicazione" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-message">Messaggio</label>
+          <textarea id="collab-message" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/javascript.js"></script>
+  <script src="js/header.js"></script>
+</body>
+</html>

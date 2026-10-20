@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAMbo Bologna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="icon" href="img/favicon.svg">
+
+</head>
+
+
+<body>
+  <!-- HEADER -->
+<header class="site-header">
+    <div class="container-header">
+      <!-- RIGA SUPERIORE -->
+      <div class="row g-0 header-top">
+        <!-- Logo -->
+        <div class="col-1 logo-col">
+          <a href="index.html"><img src="img/logo-giallo.webp" alt="Logo MAMbo" class="logo"></a>
+        </div>
+
+
+        <!-- Titolo MAMbo -->
+        <div class="col-1 offset-2 title-col">
+          <div class="header">MAMbo</div>
+        </div>
+
+
+        <!-- Collabora con noi -->
+        <div class="col-3 offset-3 collabora-col" onclick="openCollaboraModal()">
+        
+          <p class="collabora-text">Collabora con noi</p>
+        </div>
+
+
+        <!-- Tickets -->
+        <div class="col-2 tickets-col">
+          <button class="tickets-btn" onclick="openTicketsModal()">TICKETS</button>
+        </div>
+      </div>
+
+
+      <!-- RIGA MENU -->
+      <div class="row g-0 header-menu">
+        <div class="col-1 offset-3 menu-item">
+          <a href="#" data-dropdown="museo">MUSEO</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="info">INFO</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="servizi">SERVIZI</a>
+        </div>
+
+
+        <div class="col-1 menu-item">
+          <a href="#" data-dropdown="esplora">ESPLORA</a>
+        </div>
+      </div>
+
+ 
+
+      <!-- DROPDOWN BAR -->
+      <div class="dropdown-bar" id="dropdownBar">
+        <div class="dropdown-content" id="museo">
+          <div class="dropdown-column">
+            <h4>Storia</h4>
+            <a href="storia.html#storia">Storia</a>
+            <a href="archivio.html#archivio">Archivio</a>
+            <a href="archivio.html#biblioteca">Biblioteca</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Sedi</h4>
+            <a href="sedi-museo.html#villa-delle-rose">Villa delle Rose</a>
+            <a href="sedi-museo.html#residenza-per-artisti">Residenza per Artisti</a>
+            <a href="sedi-museo.html#sede-principale">Sede principale</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Shop</h4>
+            <a href="book-shop.html#book-shop">Bookshop</a>
+          </div>
+        </div>
+
+
+        <div class="dropdown-content" id="info">
+          <div class="dropdown-column">
+            <h4>Visita</h4>
+            <a href="ingresso-orari.html#ingresso-orari">Ingresso e orari</a>
+            <a href="ingresso-orari.html#date">Calendario</a>
+            <a href="ingresso-orari.html#accessibilita">Accessibilità</a>
+            <a href="come-raggiungerci.html#come-raggiungerci">Come raggiungerci</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Contatti</h4>
+            <a href="contatti.html#orari-segreteria">Orari segreteria</a>
+            <a href="contatti.html#prenotazioni-gruppi">Prenotazioni Gruppi</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Altro</h4>
+            <a href="recensioni.html#recensioni">Recensioni</a>
+          </div>
+        </div>
+
+
+        <div class="dropdown-content" id="servizi">
+          <div class="dropdown-column">
+            <h4>Scuole/Gruppi</h4>
+            <a href="visite-guidate.html">Visite guidate</a>
+            <a href="visite-laboratori.html">Visite con laboratori</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Dipartimento educativo</h4>
+            <a href="origini-metodologia.html">Origini e metodologia</a>
+
+          </div>
+          <div class="dropdown-column">
+            <h4>Affitto sale</h4>
+          <a href="corrispettivi_spazi.pdf" target="_blank">Corrispettivi spazi</a>
+           <a href="regoleoperativesett2023 (1).pdf" target="_blank">Regole operative</a>
+           <a href="modulo_affitto1.pdf" target="_blank">Modulo affitto </a>
+          </div>
+        </div>
+
+        <div class="dropdown-content" id="esplora">
+          <div class="dropdown-column">
+            <h4>Collezioni</h4>
+            <a href="mostre-temporanee.html#mostre-temporanee"> Mostre temporanee</a>
+            <a href="collezioni-permanenti.html#collezioni-permanenti">Collezioni permanenti</a>
+          </div>
+          <div class="dropdown-column">
+            <h4>Altro</h4>
+            <a href="eventi.html#eventi">Eventi</a>
+            <a href="ingresso-orari.html#date">Calendario</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </header>
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <!-- Menu Container -->
+    <div class="menu-container">
+      
+        <div class="menu">
+            <div onclick="toggleSubmenu(this)">
+                MAMbo
+            </div>
+        </div>
+        
+        <div class="menu">
+                    <div class="menu-header" onclick="toggleSubmenu(this)">
+                Museo
+            </div>
+            <div class="submenu">
+                <a href="storia.html">Storia</a>
+                <a href="archivio.html">Archivio</a>
+                <a href="archivio.html#biblioteca">Biblioteca</a>
+                <a href="sedi-museo.html">Sedi</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Info
+            </div>
+            <div class="submenu">
+                <a href="ingresso-orari.html">Ingresso e orari</a>
+                <a href="ingresso-orari.html#calendario">Calendario</a>
+                <a href="ingresso-orari.html#accessibilità">Accessibilità</a>
+                <a href="come-raggiungerci.html">Come raggiungerci</a>
+                  <a href="contatti.html#orari-segreteria">Orari e segreteria</a>
+                <a href="contatti.html#prenotazioni-gruppi">Prenotazioni gruppi</a>
+                <a href="recensioni.html">Recensioni</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Servizi
+            </div>
+            <div class="submenu">
+                <a href="visite-guidate.html">Visite guidate</a>
+                <a href="visite-laboratori.html">Visite con laboratori</a>
+                <a href="origini-metodologia.html">Origini e metodologia</a>
+                <a href="corrispettivi_spazi.pdf">Corrispettivi_spazi</a>
+                <a href="regoleoperativesett2023 (1).pdf">Regole operative</a>
+                <a href="modulo_affitto1.pdf">Modulo affitto</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-header" onclick="toggleSubmenu(this)">
+                Esplora
+            </div>
+            <div class="submenu">
+                <a href="mostre-temporanee.html">Mostre temporanee</a>
+                <a href="collezioni-permanenti.html">Collezioni permanenti</a>
+                <a href="eventi.html">Eventi</a>
+                <a href="ingresso-orari.html#calendario">Calendario</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- CONTENUTO PAGINA -->
+
+
+    <div class="container">
+        <div class="section">
+            <section class="header-section">
+                <div class="header-container">
+                    <div class="title-block">
+                        <h3>SCUOLE <br>&GRUPPI</h3>
+                    </div>
+                    <div class="row">
+                <div class="col-12 pt-5">
+                    <img src="img/scuole.webp" alt="Scuole e Gruppi" class="img-fluid mb-5">
+                </div>
+            </div>
+   
+
+
+<!-- Sezione Visite Guidate -->
+<section class="visite-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="main-title">VISITE CON LABORATORI</h3>
+            </div>
+        </div>
+        <!-- ATTENZIONE -->
+        <section class="content-section">
+                <p class="intro-text justify-content-center">
+                    ATTENZIONE!<br>
+                    <p class="testo">
+
+
+Dal 1° gennaio 2024 <strong>tutte le attività didattiche sono gratuite</strong> grazie al Programma Nazionale PN Metro Plus Città Medie Sud 2021-2027, quindi non è più necessario allegare alla prenotazione il modulo di richiesta gratuità.<br>Le attività verranno accordate fino al numero massimo disponibile per ogni museo nell'arco dell'anno scolastico.</p>
+                </p>
+            </section>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div class="container-fluid">
+        <!-- SEGUENDO IL FILO ROSSO -->
+<!-- BLOCK 1: Testo Sinistra, Immagine Destra -->
+   <div class="content-block">
+     <div class="text-content">
+       <h2>SEGUENDO IL FILO ROSSO</h2>
+       <p class="block-subtitle">Durata: 1.30h</p>
+       <div class="block-text">
+                                Un percorso a tappe tra le sale della collezione permanente, accompagnati da un filo rosso che permette alle più piccole e ai più piccoli di avvicinarsi al "luogo museo" e all'arte contemporanea. Dipinti, sculture, fotografie e installazioni diventano il terreno ideale per esplorare parole chiave come corpo, forma, segno e colore e utilizzare a pieno la propria dimensione sensoriale. Un'esperienza preziosa a contatto con le opere d'arte per allenare meraviglia, motricità, inventiva e stupore.
+                        </p>
+       </div>
+     </div>
+     <div class="image-content">
+       <img src="img/filo_rosso.webp" alt="filo rosso">
+     </div>
+   </div>
+
+        <!-- RELAZIONI IN TRASFORMAZIONE -->
+            <!-- BLOCK 2: Immagine Sinistra, Testo Destra -->
+   <div class="content-block">
+     <div class="text-content">
+       <h2 class="block-title">RELAZIONI IN TRASFORMAZIONE</h2>
+       <p class="block-subtitle">Durata: 1.30h</p>
+       <div class="block-text">
+         <p>Il museo è un luogo speciale in cui allenare la propria sensibilità. L'incontro con le opere di alcuni artisti e artiste della collezione permanente offre la possibilità a ragazze e ragazzi di indagare il rapporto tra individuo e collettività, stimolandoli ad adottare punti di vista e prospettive differenti sulla realtà e sulle relazioni che li circondano. Singolare, duale e plurale, diventano territori di scambio e di confronto in cui rielaborare, attraverso attività laboratoriali, le esperienze degli artisti e il vissuto di ogni partecipante.
+        </p>
+       </div>
+     </div>
+     <div class="image-content">
+       <img src="img/Relazioni-in-trasformazione1.webp" alt="relazioni in trasformazioni">
+     </div>
+   </div>
+
+        <!-- UNA MAPPA PER PERDERMI -->
+<!-- BLOCK 1: Testo Sinistra, Immagine Destra -->
+   <div class="content-block">
+     <div class="text-content">
+       <h2>UNA MAPPA PER PERDERMI</h2>
+       <p class="block-subtitle">Durata: 1.30h</p>
+       <div class="block-text">
+                               Nel 2006, quando il MAMbo era ancora un grande cantiere, l'artista Giovanni Anselmo propose di collocare una bussola all'interno di una lastra di pietra all'ingresso del futuro museo. Quattro punti cardinali e quattro artisti, guidano ragazze e ragazzi nella costruzione di mappe in cui scoprire modi diversi per trovare la propria strada, anche affrontando la paura di perdersi, per poi ritrovarsi.
+                        </p>
+       </div>
+     </div>
+     <div class="image-content">
+       <img src="img/mappa.webp" alt="una mappa per perdermi">
+     </div>
+   </div>
+
+        <!-- VERDE DI RABBIA ROSSO D'INVIDIA -->
+            <!-- BLOCK 2: Immagine Sinistra, Testo Destra -->
+   <div class="content-block">
+     <div class="text-content">
+       <h2 class="block-title">VERDE DI RABBIA, ROSSO D'INVIDIA</h2>
+       <p class="block-subtitle">Durata: 1.30h</p>
+       <div class="block-text">
+         <p>I colori sono spesso stati un ingrediente fondamentale delle opere d'arte. Ma come sono cambiati i colori nel corso del tempo? Il rosso è sempre stato il colore della rabbia e il verde quello dell'invidia? Una visita animata alla collezione permanente per incontrare alcune opere e riflettere insieme su quanti e quali significati attribuiamo ai colori, rendendoli molto spesso capaci di comunicare.
+        </p>
+       </div>
+     </div>
+     <div class="image-content">
+       <img src="img/rosso.webp" alt="relazioni in trasformazioni">
+     </div>
+   </div>
+
+    </div>
+</section>
+
+
+
+<!-- Bottone Prenota Ora a fine pagina -->
+        <div class="prenota-button-section">
+            <button class="prenota-btn" onclick="openTicketsModal()">Prenota ora</button>
+        </div>
+
+
+    </div>
+</section>
+</div>
+</div>
+
+<!-- Modal Tickets -->
+<div id="ticketsModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeTicketsModal()">&times;</button>
+        <h2>Prenota Visita</h2>
+        <form id="ticketsForm" onsubmit="submitTickets(event)">
+            <div class="form-group">
+                <label for="ticket-name">Nome e Cognome</label>
+                <input type="text" id="ticket-name" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="ticket-email">Email</label>
+                <input type="email" id="ticket-email" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="ticket-phone">Telefono</label>
+                <input type="tel" id="ticket-phone" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="ticket-date">Data Visita</label>
+                <input type="date" id="ticket-date" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="ticket-event">Evento</label>
+                <select id="ticket-event" required>
+                    <option value="">Seleziona un evento</option>
+                    <optgroup label="Visite guidate">
+                        <option value="thanx">Thanx 4 Nothing</option>
+                        <option value="costante">L'unica costante è il cambiamento</option>
+                        <option value="grandi">Perché non i grandi artisti?</option>
+                        <option value="pianeta">Per salvare il pianeta</option>
+                    </optgroup>
+                    <optgroup label="Visite con laboratori">
+                        <option value="filo">Seguendo il filo rosso</option>
+                        <option value="relazioni">Relazioni in Trasformazione</option>
+                        <option value="verde">Verde di rabbia, rosso d'invidia</option>
+                        <option value="mappa">Una mappa per perdermi</option>
+                    </optgroup>
+                </select>
+            </div>
+   
+            <div class="form-group">
+                <label for="ticket-quantity">Numero Biglietti</label>
+                <input type="number" id="ticket-quantity" min="1" max="10" value="1" required>
+            </div>
+
+
+            <div class="checkbox-group">
+                <div class="custom-checkbox" id="privacyCheckbox" onclick="toggleCheckbox()"></div>
+                <label class="checkbox-label" onclick="toggleCheckbox()">Accetto l'informativa sulla privacy</label>
+            </div>
+
+
+            <button type="submit" class="form-submit" id="submitBtn" disabled>Prenota</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal Metodo di Pagamento -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closePaymentModal()">&times;</button>
+        <h2>Metodo di Pagamento</h2>
+       
+        <!-- Box Riepilogo Prezzo -->
+        <div style="background: #f2ecec; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+            <h3 style="margin: 0 0 15px 0; color: #333; font-size: 18px; font-weight: 600;">Riepilogo Ordine</h3>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span style="color: #666;">Biglietti:</span>
+                <span style="color: #333; font-weight: 600;" id="numBiglietti">1</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span style="color: #666;">Prezzo unitario:</span>
+                <span style="color: #333; font-weight: 600;">€ 8,00</span>
+            </div>
+            <hr style="border: none; border-top: 2px solid #ddd; margin: 15px 0;">
+            <div style="display: flex; justify-content: space-between;">
+                <span style="color: #333; font-size: 20px; font-weight: 700;">TOTALE:</span>
+                <span style="color: #ff0084; font-size: 24px; font-weight: 700;" id="prezzoTotale">€ 8,00</span>
+            </div>
+        </div>
+        <form id="paymentForm" onsubmit="submitPayment(event)">
+            <div class="form-group">
+                <label for="payment-method">Seleziona Metodo di Pagamento</label>
+                <select id="payment-method" required>
+                    <option value="">Scegli un metodo</option>
+                    <option value="carta-credito">Carta di Credito</option>
+                    <option value="carta-debito">Carta di Debito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bonifico">Bonifico Bancario</option>
+                    <option value="contanti">Contanti (al museo)</option>
+                </select>
+            </div>
+
+
+            <div id="card-details" style="display: none;">
+                <div class="form-group">
+                    <label for="card-number">Numero Carta</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="card-name">Nome sul Titolare</label>
+                    <input type="text" id="card-name" placeholder="Mario Rossi">
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="card-expiry">Scadenza (MM/AA)</label>
+                            <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="paypal-details" style="display: none;">
+                <div class="form-group">
+                    <label for="paypal-email">Email PayPal</label>
+                    <input type="email" id="paypal-email" placeholder="esempio@email.com">
+                </div>
+            </div>
+
+
+            <div id="bonifico-details" style="display: none;">
+                <div class="form-group">
+                    <p style="color: #333; font-size: 16px; line-height: 1.6;">
+                        Effettua il bonifico ai seguenti dati:<br><br>
+                        <strong>IBAN:</strong> IT00 X000 0000 0000 0000 0000 000<br>
+                        <strong>Intestatario:</strong> MAMbo - Museo d'Arte Moderna<br>
+                        <strong>Causale:</strong> Prenotazione Visita + [inserire data]
+                    </p>
+                </div>
+            </div>
+
+
+            <div id="contanti-details" style="display: none;">
+                <div class="form-group">
+                    <p style="color: #333; font-size: 16px; line-height: 1.6;">
+                        Il pagamento verrà effettuato direttamente al museo il giorno della visita.
+                        Ricorda di portare l'importo esatto.
+                    </p>
+                </div>
+            </div>
+
+
+            <button type="submit" class="form-submit">Conferma Pagamento</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal Conferma Finale -->
+<div id="confirmationModal" class="modal">
+    <div class="confirmation-content">
+        <div class="success-icon">
+            <div class="success-circle">
+                <svg class="success-checkmark" viewBox="0 0 52 52">
+                    <path d="M14 27l8 8 16-16"/>
+                </svg>
+            </div>
+        </div>
+       
+        <h2 class="confirmation-title">Prenotazione Confermata!</h2>
+       
+        <p class="confirmation-message">
+            Il tuo pagamento è stato elaborato con successo.
+            Riceverai a breve una email di conferma con tutti i dettagli della tua visita.
+        </p>
+       
+        <div class="confirmation-details">
+            <p><strong>Numero Prenotazione:</strong> <span id="bookingNumber"></span></p>
+            <p><strong>Data Visita:</strong> <span id="bookingDate"></span></p>
+            <p><strong>Orario:</strong> <span id="bookingTime"></span></p>
+            <p><strong>Tipo Visita:</strong> <span id="bookingTour"></span></p>
+            <p><strong>Numero Biglietti:</strong> <span id="bookingTickets"></span></p>
+        </div>
+       
+        <button class="close-confirmation-btn" onclick="closeConfirmationModal()">Torna alla Home</button>
+    </div>
+</div>
+
+
+<!-- Modal Pagamento Confermato -->
+<div id="paymentConfirmedModal" class="modal">
+    <div class="payment-confirmed-content">
+        <div class="success-icon">
+            <div class="success-circle">
+                <svg class="success-checkmark" viewBox="0 0 52 52">
+                    <path d="M14 27l8 8 16-16"/>
+                </svg>
+            </div>
+        </div>
+        
+        <h2 class="payment-confirmed-title">PAGAMENTO CONFERMATO!</h2>
+        
+        <p class="payment-confirmed-message">
+            Il tuo pagamento è stato elaborato con successo.
+        </p>
+        
+        <button class="close-payment-confirmed-btn" onclick="closePaymentConfirmedModal()">OK</button>
+    </div>
+</div>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="logo-container">
+        <img src="img/logo-giallo.webp" alt="MAMbo Logo" class="logo-mambo">
+      </div>
+     
+      <div class="contatti-section">
+        <h4>CONTATTI</h4>
+       <p>COMUNE DI BOLOGNA</p><br>
+        <p>SETTORE MUSEI CIVICI BOLOGNA</p><br>
+        <p>Via Don Minzoni, 14 - 40121 BOLOGNA</p><br>
+        <p>+390516496611</p><br>
+        <p><a href="mailto:infoMAMbo@comune.bologna.it" class="email-link">infoMAMbo@comune.bologna.it</a></p>
+      </div>
+          <div class="col-1 "></div>
+      <div class="links-section">
+        <div class="links-list">
+          <p><a href="storia.html">Chi siamo?</a></p><br>
+          <p><a href="recensioni.html">Recensioni</a></p>
+        </div>
+      </div>
+     
+      <div class="col-2 "></div>
+      <div class="social-section">
+        <div class="social-item">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="social-link">
+          <span><a href="https://www.instagram.com/mambobologna/" target="_blank">Instagram</a></span></div>
+        </div>
+       
+        <div class="social-item">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="social-link">
+          <span><a href="https://www.youtube.com/@mambochannel3039" target="_blank">YouTube</a></span></div>
+        </div>
+       
+        <div class="social-item pb-5">
+          <div class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+        <div class="social-link">
+          <span><a href="https://www.facebook.com/MAMboMuseoArteModernaBologna/" target="_blank">Facebook</a></span></div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="copyright">
+      <p>© - 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+
+  <!-- MODAL TICKETS -->
+  <div id="ticketsModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeTicketsModal()">&times;</button>
+      <h2>Prenota Biglietti</h2>
+      <form onsubmit="submitTickets(event)">
+        <div class="form-group">
+          <label for="ticket-name">Nome e Cognome</label>
+          <input type="text" id="ticket-name" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-email">Email</label>
+          <input type="email" id="ticket-email" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-phone">Telefono</label>
+          <input type="tel" id="ticket-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-date">Data Visita</label>
+          <input type="date" id="ticket-date" required>
+        </div>
+        <div class="form-group">
+          <label for="ticket-quantity">Numero Biglietti</label>
+          <input type="number" id="ticket-quantity" min="1" max="10" value="1" required>
+        </div>
+        <button type="submit" class="form-submit">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- MODAL COLLABORA -->
+  <div id="collaboraModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCollaboraModal()">&times;</button>
+      <h2>Collabora con Noi</h2>
+      <form onsubmit="submitCollabora(event)">
+        <div class="form-group">
+          <label for="collab-name">Nome e Cognome</label>
+          <input type="text" id="collab-name" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-email">Email</label>
+          <input type="email" id="collab-email" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-phone">Telefono</label>
+          <input type="tel" id="collab-phone" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-area">Area di Interesse</label>
+          <input type="text" id="collab-area" placeholder="es. Arte, Educazione, Comunicazione" required>
+        </div>
+        <div class="form-group">
+          <label for="collab-message">Messaggio</label>
+          <textarea id="collab-message" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Invia Richiesta</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/javascript.js"></script>
+  <script src="js/header.js"></script>
+</body>
+</html>
